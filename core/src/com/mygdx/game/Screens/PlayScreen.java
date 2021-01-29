@@ -6,7 +6,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
-
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -40,6 +39,7 @@ public class PlayScreen implements Screen {
     private Granny player;
 
     public PlayScreen(MyHeroGranny game) {
+        // cargamos los sprites a utilizar
         atlas = new TextureAtlas("dragonball.pack");
         this.game = game;
         gamecam = new OrthographicCamera();
@@ -59,7 +59,7 @@ public class PlayScreen implements Screen {
 
         new B2WorldCreator(world, map);
         //
-        player = new Granny(world, this);
+        player = new Granny(this);
         //   world.setContactListener(new WorldContactListener());
 
     }
@@ -85,6 +85,7 @@ public class PlayScreen implements Screen {
     public void handleInput(float dt) {
         if (Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
             player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
+
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2) {
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);

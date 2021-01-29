@@ -2,11 +2,9 @@ package com.mygdx.game.Sprites;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.mygdx.game.MyHeroGranny;
@@ -14,13 +12,16 @@ import com.mygdx.game.Screens.PlayScreen;
 
 public class Granny extends Sprite {
 
+    public enum State { FALLING, JUMPING, STANDING, RUNNING, GROWING, DEAD };
+
     public World world;
     public Body b2body;
+
     private PlayScreen screen;
     private TextureRegion grannyStand;
 
 
-    public Granny(World world, PlayScreen screen) {
+    public Granny( PlayScreen screen) {
         super(screen.getAtlas().findRegion("NES - Dragon Ball Z III Ressen Jinzou Ningen JPN - Overworld Characters"));
         this.screen = screen;
         this.world = screen.getWorld();
@@ -48,5 +49,6 @@ public class Granny extends Sprite {
     }
 
     public void update(float dt) {
+
     }
 }

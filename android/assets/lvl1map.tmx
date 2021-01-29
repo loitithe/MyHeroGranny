@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="240" height="13" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="63">
- <tileset firstgid="1" name="NES - Mario is Missing - Tilesets" tilewidth="16" tileheight="16" spacing="2" margin="1" tilecount="1988" columns="28">
-  <image source="NES - Mario is Missing - Tilesets.png" width="513" height="1280"/>
- </tileset>
+
  <tileset firstgid="1989" name="NES - Super Mario Bros - World -1 FDS" tilewidth="16" tileheight="16" spacing="2" margin="1" tilecount="1885" columns="145">
   <image source="NES - Super Mario Bros - World -1 FDS.png" width="2624" height="240"/>
  </tileset>
